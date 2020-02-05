@@ -8,7 +8,7 @@
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many    :groups        , through:  :group-users
+- has_many    :groups        , through:  :groups-users
 - has_many    :chats
 - has_many    :groups-users
 
@@ -18,7 +18,7 @@
 |groupname|text|null: false|
 ### Association
 - has_many    :chats
-- has_many    :users        ,through:  :group-users
+- has_many    :users        ,through:  :groups-users
 - has_many    :groups_users
 
 ## chatsテーブル
