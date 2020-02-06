@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__side-header
+    .side-bar__side-header__user-info
+      .side-bar__side-header__user-info__user-name
+        username
+      .side-bar__side-header__user-info__icons
+        = link_to "#", class: "side-bar__side-header__user-info__icons__edit" do
+          = icon('fas', 'edit')
+        = link_to "#", class: "side-bar__side-header__user-info__icons__config" do
+          = icon('fas', 'cog')
+  .side-bar__side-contents
+    .side-bar__side-contents__chat-info
+      .side-bar__side-contents__chat-info__chat-name
+        groupname1
+      .side-bar__side-contents__chat-info__latest-message
+        まだメッセージがないよ
+    .side-bar__side-contents__chat-info
+      .side-bar__side-contents__chat-info__chat-name
+        groupname2
+      .side-bar__side-contents__chat-info__latest-message
+        まだメッセージがないよ
