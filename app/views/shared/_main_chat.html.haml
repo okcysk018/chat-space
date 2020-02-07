@@ -1,26 +1,34 @@
 .main-chat
-  .main-chat__main-header
-    .main-chat__main-header__group-info
-      .main-chat__main-header__group-info__group-name
+  .main-header
+    .main-header__group-info
+      .main-header__group-info__group-name
         groupname1
-      .main-chat__main-header__group-info__member-list
+      .main-header__group-info__member-list
         Member : 俺
-    .main-chat__main-header__edit-box
-      .main-chat__main-header__edit-box__edit-btn
-        Edit
-      -# TODO ボタン位置おかしい
-      -# TODO リンクどうにかする
-      -# = link_to "#", class: "main-chat__main-header__edit-box__edit-btn"
-  .main-chat__message-list
-    .main-chat__message-list__message-info
-      .main-chat__message-list__message-info__upper-info
-        .main-chat__message-list__message-info__upper-info__talker
-          username1　
-          -# TODO スペースわからん
-        .main-chat__message-list__message-info__upper-info__date
+    .main-header__edit-box
+      = button_to "Edit", "#", class: "main-header__edit-box__edit-btn"
+  .message-list
+    .message-list__message-info
+      .message-list__message-info__upper-info
+        .message-list__message-info__upper-info__talker
+          username1
+        .message-list__message-info__upper-info__date
           2019/02/06(Thr) 21:07:00
-      .main-chat__message-list__message-info__message-text
+      .message-list__message-info__message-text
         message1
-  .main-chat__message-form
-    
-
+    .message-list__message-info
+      .message-list__message-info__upper-info
+        .message-list__message-info__upper-info__talker
+          username2
+        .message-list__message-info__upper-info__date
+          2019/02/07(Fri) 16:00:00
+      .message-list__message-info__message-text
+        message2
+  .message-form
+    %form.message-form__new-message
+      .message-form__new-message__message-box
+        %input{type: "text", class: "message-form__new-message__message-box__text", placeholder: "type a message"}
+        %label{class: "message-form__new-message__message-box__image"}
+          = icon("far", "image")
+          %input{type: "file", class:"message-form__new-message__message-box__image__file"}
+      %input{type: "submit", class: "message-form__new-message__submit-btn", value:"Send"}

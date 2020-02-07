@@ -1,47 +1,58 @@
+
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
+
+$side_color: #ffffff;
+$main_color: #333333;
+$main_sub_color: #999999;
+
+@mixin side_icon {
+  font-size: 14px;
+  color: $side_color;
+  margin-left: 5px;
+}
+
 .wrapper {
   display: flex;
 }
-
 .side-bar {
   height: 100vh;
-  background-color: #253141;
-  color: #ffffff;
   width: 300px;
-  &__side-header {
+  .side-header {
     background-color: #253141;
     height: 100px;
     &__user-info{
       display: flex;
       justify-content: space-between;
-      line-height: 100px;
       margin: auto 20px;
-      color: #ffffff;
+      height: 20px;
+      padding-top: 40px;
       &__user-name {
+        color: $side_color;
         font-size: 16px;
         font-weight: bold;
       }
       &__icons {
         &__edit{
-          color: #ffffff;
-          text-decoration: none;
-          padding-right: 5px;
+          @include side_icon;
         }
         &__config{
-          color: #ffffff;
-          text-decoration: none;
+          @include side_icon;
         }
       }
     }
   }
-  &__side-contents {
+  .side-contents {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
     &__chat-info {
       padding-bottom: 40px;
+      color: $side_color;
       &__chat-name {
         font-size: 15px;
       }
@@ -52,12 +63,12 @@
     }
   }
 }
+
 .main-chat {
   height: 100vh;
-  background-color: #ffffff;
   color: black;
   width: calc(100vw - 300px);
-  &__main-header {
+  .main-header {
     background-color: #ffffff;
     height: 100px;
     width: calc(100vw - 300px);
@@ -67,33 +78,32 @@
     justify-content: space-between;
     &__group-info {
       &__group-name {
-        color: #333333;
-        font-size: 20px;  
+        color: $main_color;
+        font-size: 20px;
         padding-top: 35px;
         padding-bottom: 15px;
       }
       &__member-list {
-        color: #999999;
+        color: $main_sub_color;
         font-size: 12px;
       }
     }
     &__edit-box {
       padding-top: 28px;
       padding-bottom: 32pxx;
-      color: #38aef0;
-      font-size: 16px;
       &__edit-btn {
         border: 1px solid;
         width: 72px;
         height: 40px;
         line-height: 40px;
         text-align: center;
-        text-decoration: none;
-      }
-
+        color: #38aef0;
+        font-size: 16px;
+        cursor: pointer;
+      } 
     }
   }
-  &__message-list {
+  .message-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
     width: calc(100vw - 300px);
@@ -103,13 +113,14 @@
       &__upper-info {
         display: flex;
         &__talker {
-          color: #333333;
+          color: $main_color;
           font-size: 16px;
           font-weight: bold;
         }
         &__date {
-          color: #999999;
+          color: $main_sub_color;
           font-size: 12px;
+          margin-left: 10px;
         }
       }
       &__message-text {
@@ -119,10 +130,42 @@
       }
     }
   }
-  &__message-form {
+  .message-form {
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
-
+    padding: 20px 40px;
+    &__new-message {
+      display: flex;
+      width: calc(100vw - 380px);
+      &__message-box{
+        width: 100%;
+        display: flex;
+        position: relative;
+        &__text{
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+        }
+        &__image{
+          height: 50px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 25px;
+            &__file{
+            display: none;
+          }
+        }
+      }
+      &__submit-btn{
+          margin-left: 15px;
+          height: 50px;
+          width: 100px;
+          background-color: #38aef0;
+          color: #fafafa;
+          cursor: pointer;
+      }
+    }
   }
 }

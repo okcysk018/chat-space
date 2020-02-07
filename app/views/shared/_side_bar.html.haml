@@ -1,21 +1,23 @@
 .side-bar
-  .side-bar__side-header
-    .side-bar__side-header__user-info
-      .side-bar__side-header__user-info__user-name
+  .side-header
+    .side-header__user-info
+      .side-header__user-info__user-name
         username
-      .side-bar__side-header__user-info__icons
-        = link_to "#", class: "side-bar__side-header__user-info__icons__edit" do
+      .side-header__user-info__icons
+        = link_to "#", class: "side-header__user-info__icons__edit" do
           = icon('fas', 'edit')
-        = link_to "#", class: "side-bar__side-header__user-info__icons__config" do
+        = link_to "#", class: "side-header__user-info__icons__config" do
           = icon('fas', 'cog')
-  .side-bar__side-contents
-    .side-bar__side-contents__chat-info
-      .side-bar__side-contents__chat-info__chat-name
-        groupname1
-      .side-bar__side-contents__chat-info__latest-message
-        まだメッセージがないよ
-    .side-bar__side-contents__chat-info
-      .side-bar__side-contents__chat-info__chat-name
-        groupname2
-      .side-bar__side-contents__chat-info__latest-message
-        まだメッセージがないよ
+  .side-contents
+    = link_to "#" do
+      .side-contents__chat-info
+        .side-contents__chat-info__chat-name
+          groupname1
+        .side-contents__chat-info__latest-message
+          まだメッセージがないよ
+    = link_to "#" do
+      .side-contents__chat-info
+        .side-contents__chat-info__chat-name
+          groupname2
+        .side-contents__chat-info__latest-message
+          まだメッセージがないよ
