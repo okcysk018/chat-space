@@ -1,19 +1,11 @@
+@import "mixin/mixin";
+@import "variable";
 
 * {
   box-sizing: border-box;
 }
 a {
   text-decoration: none;
-}
-
-$side_color: #ffffff;
-$main_color: #333333;
-$main_sub_color: #999999;
-
-@mixin side_icon {
-  font-size: 14px;
-  color: $side_color;
-  margin-left: 5px;
 }
 
 .wrapper {
