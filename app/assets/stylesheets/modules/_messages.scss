@@ -44,13 +44,14 @@ a {
     padding: 20px 20px 0;
     &__chat-info {
       padding-bottom: 40px;
-      color: $side_color;
       &__chat-name {
         font-size: 15px;
+        color: $side_color;
       }
       &__latest-message {
         font-size: 11px;
         margin-top: 5px;
+        color: $side_color;
       }
     }
   }
