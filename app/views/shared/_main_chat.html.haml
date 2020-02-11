@@ -2,33 +2,21 @@
   .main-header
     .main-header__group-info
       .main-header__group-info__group-name
-        groupname1
+        = @group.name
       .main-header__group-info__member-list
-        Member : 俺
+        Member : 
+        - @group.users.each do |user| 
+          = user.name
     .main-header__edit-box
-      = button_to "Edit", "#", class: "main-header__edit-box__edit-btn", method: :edit
+      = button_to "Edit", edit_group_path(@group), class: "main-header__edit-box__edit-btn", method: :get
   .message-list
-    .message-list__message-info
-      .message-list__message-info__upper-info
-        .message-list__message-info__upper-info__talker
-          username1
-        .message-list__message-info__upper-info__date
-          2019/02/06(Thr) 21:07:00
-      .message-list__message-info__message-text
-        message1
-    .message-list__message-info
-      .message-list__message-info__upper-info
-        .message-list__message-info__upper-info__talker
-          username2
-        .message-list__message-info__upper-info__date
-          2019/02/07(Fri) 16:00:00
-      .message-list__message-info__message-text
-        message2
+    = render @messages
   .message-form
-    %form.message-form__new-message
-      .message-form__new-message__message-box
-        %input{type: "text", class: "message-form__new-message__message-box__text", placeholder: "type a message"}
-        %label{class: "message-form__new-message__message-box__image"}
-          = icon("far", "image")
-          %input{type: "file", class:"message-form__new-message__message-box__image__file"}
-      %input{type: "submit", class: "message-form__new-message__submit-btn", value:"Send"}
+    = form_for [@group, @message] do |f|
+      .message-form__new-message
+        .message-form__new-message__message-box
+          = f.text_field :content, class: "message-form__new-message__message-box__text", placeholder: "type a message"
+          = f.label :image, class: "message-form__new-message__message-box__image" do
+            = icon("far", "image")
+            = f.file_field :image, class: "message-form__new-message__message-box__image__file"
+        = f.submit "Send", class: "message-form__new-message__submit-btn"

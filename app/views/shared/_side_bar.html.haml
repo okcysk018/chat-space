@@ -11,12 +11,8 @@
   .side-contents
     - current_user.groups.each do |group|
       .side-contents__chat-info
-        = link_to "#" do
+        = link_to group_messages_path(group) do
           .side-contents__chat-info__chat-name
             = group.name
           .side-contents__chat-info__latest-message
-            メッセージはまだありません
-        -# .side-contents__chat-info__chat-name
-        -#   groupname1
-        -# .side-contents__chat-info__latest-message
-        -#   まだメッセージがないよ
+            = group.show_latest_message

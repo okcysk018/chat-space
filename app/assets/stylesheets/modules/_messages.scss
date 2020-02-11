@@ -42,6 +42,10 @@ a {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
+    overflow: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
     &__chat-info {
       padding-bottom: 40px;
       &__chat-name {
@@ -101,6 +105,10 @@ a {
     height: calc(100vh - 190px);
     width: calc(100vw - 300px);
     padding: 46px 40px;
+    overflow: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
     &__message-info {
       padding-bottom: 46px;
       &__upper-info {
