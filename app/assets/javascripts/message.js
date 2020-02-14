@@ -5,7 +5,6 @@ $(function(){
     if (message.content && message.image) {
       //data-idが反映されるようにしている
       //メッセージに画像が含まれる場合のHTMLを作る
-
       var html = `<div class="message-list__message-info" data-message-id=${message.id}>
                    <div class="message-list__message-info__upper-info">
                    <div class="message-list__message-info__upper-info__talker">
@@ -18,7 +17,7 @@ $(function(){
                  ${message.content}
                  </div>
                    </div>
-                   <img src=${message.image} >
+                   <img class="message-list__message-info__message-image" src=${message.image} >
                    </div>`
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
@@ -47,8 +46,8 @@ $(function(){
                      <div class="message-list__message-info__upper-info__date">
                      ${message.created_at}
                      </div>
-                   </div>
-                   <img src=${message.image} >
+                     </div>
+                     <img class="message-list__message-info__message-image" src=${message.image} >
                    </div>`
     };
     return html;
