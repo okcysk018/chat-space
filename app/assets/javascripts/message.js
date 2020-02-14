@@ -13,10 +13,10 @@ $(function(){
                    <div class="message-list__message-info__upper-info__date">
                    ${message.created_at}
                    </div>
-                 <div class="message-list__message-info__message-text">
-                 ${message.content}
-                 </div>
                    </div>
+                  <div class="message-list__message-info__message-text">
+                  ${message.content}
+                  </div>
                    <img class="message-list__message-info__message-image" src=${message.image} >
                    </div>`
     } else if (message.content) {
