@@ -4,13 +4,11 @@ describe MessagesController do
   let(:group) { create(:group) }
   let(:user) { create(:user) }
 
-  # TODO:"GET #index" では？
   describe '#index' do
     # ログインしている場合
     context 'log in' do
       before do
         login user
-        # TODO:let(:group)のgroup？
         get :index, params: {group_id: group.id}
       end
       #   アクション内で定義しているインスタンス変数があるか
@@ -19,7 +17,6 @@ describe MessagesController do
       end
 
       it 'assigns @group' do
-        # TODO:let(:group)のgroup？
         expect(assigns(:group)).to eq group
       end
       #   該当するビューが描画されているか
@@ -33,7 +30,6 @@ describe MessagesController do
         get :index, params: { group_id: group.id }
       end
       #   意図したビューにリダイレクトできているか  
-        # TODO:message_controllerを参考にログインしていないときの処理はどこに？？
         it 'redirects to new_user_session_path' do
         expect(response).to redirect_to(new_user_session_path)
       end
